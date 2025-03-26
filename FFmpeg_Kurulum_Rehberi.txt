@@ -1,0 +1,75 @@
+=====================================================
+           FFmpeg KURULUM REHBERİ (WINDOWS)
+=====================================================
+
+Discord müzik botunuz için FFmpeg gereklidir. Bu dosya, Windows'ta FFmpeg'in nasıl kurulacağını adım adım açıklamaktadır.
+
+## NEDEN FFmpeg GEREKLİDİR?
+FFmpeg, ses ve video dosyalarını okumak, dönüştürmek ve işlemek için kullanılan güçlü bir araçtır. Discord botunuz, YouTube'dan ses akışı yapabilmek için FFmpeg'e ihtiyaç duyar.
+
+## KURULUM ADIMLARI:
+
+1. **FFmpeg İndirme:**
+   - https://ffmpeg.org/download.html adresine gidin
+   - "Windows Builds" bölümüne tıklayın
+   - İndirme sayfalarından birini seçin (gyan.dev veya BtbN önerilir)
+   - "ffmpeg-release-essentials.zip" veya benzer bir zip dosyasını indirin
+
+2. **Dosyaları Çıkarma:**
+   - İndirdiğiniz zip dosyasını bilgisayarınızda bir klasöre çıkarın
+   - Örneğin: C:\FFmpeg veya D:\Programs\FFmpeg gibi kolay hatırlanabilir bir konum seçin
+   - Çıkardığınız klasörün içinde "bin" adlı bir klasör olduğunu doğrulayın
+   - Bu bin klasörü, ffmpeg.exe, ffplay.exe ve ffprobe.exe dosyalarını içermelidir
+
+3. **PATH'e Ekleme (Yöntem 1 - Windows Arayüzü):**
+   - Windows arama çubuğuna "Ortam Değişkenleri" yazın
+   - "Sistem ortam değişkenlerini düzenle" seçeneğini tıklayın
+   - "Ortam Değişkenleri" butonuna tıklayın
+   - "Sistem değişkenleri" bölümünde "Path" değişkenini bulun
+   - "Düzenle" butonuna tıklayın
+   - "Yeni" butonuna tıklayın
+   - FFmpeg'in bin klasörünün tam yolunu ekleyin (örn: C:\FFmpeg\bin)
+   - "Tamam" butonlarına basarak tüm pencereleri kapatın
+
+4. **PATH'e Ekleme (Yöntem 2 - Komut İstemi):**
+   - Yönetici olarak Komut İstemini açın
+   - Aşağıdaki komutu yazın (bin klasörünün gerçek yolu ile değiştirin):
+     ```
+     setx /m PATH "%PATH%;C:\FFmpeg\bin"
+     ```
+   - Komut İstemini kapatıp yeniden açın
+
+5. **Kurulumu Doğrulama:**
+   - Yeni bir Komut İstemi veya PowerShell penceresi açın
+   - Şu komutu yazın:
+     ```
+     ffmpeg -version
+     ```
+   - Eğer FFmpeg sürüm bilgisi görünüyorsa, kurulum başarılıdır
+
+## SORUN GİDERME:
+
+1. **"FFmpeg is not recognized as an internal or external command" Hatası:**
+   - PATH değişkenine doğru yolu eklediğinizden emin olun
+   - Komut İstemini yeniden başlatın
+   - Bin klasöründe ffmpeg.exe dosyasının olduğunu kontrol edin
+
+2. **PATH Değişikliği Etkili Olmadı:**
+   - Tüm açık Komut İstemi ve PowerShell pencerelerini kapatın
+   - Hatta bilgisayarınızı yeniden başlatmayı deneyin
+   - Sonra tekrar ffmpeg -version komutunu çalıştırın
+
+3. **Manuel Çalıştırma:**
+   - Eğer PATH'e ekleme çalışmazsa, FFmpeg'i tam yolu ile çalıştırabilirsiniz
+   - Discord bot klasörünüze ffmpeg.exe, ffplay.exe ve ffprobe.exe dosyalarını kopyalayın
+   - Bu geçici bir çözümdür, PATH'e ekleme daha iyidir
+
+## KURULUMUDAN SONRA:
+
+FFmpeg kurulumunu tamamladıktan sonra, Discord botunuzu başlatmak için:
+1. start_bot_simple.bat dosyasını çift tıklayın
+2. Bot sorunsuz bir şekilde başlamalı ve müzik çalabilmelidir
+
+=====================================================
+               BAŞARILAR DİLERİZ!
+===================================================== 

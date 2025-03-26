@@ -1,8 +1,6 @@
 import os
 import asyncio
 import discord
-import ssl
-import certifi
 from discord.ext import commands
 from dotenv import load_dotenv
 import yt_dlp as youtube_dl
@@ -36,9 +34,6 @@ ffmpeg_options = {
     'options': '-vn',
     'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5',
 }
-
-# SSL ayarını yap
-ssl._create_default_https_context = ssl._create_unverified_context
 
 ytdl = youtube_dl.YoutubeDL(ytdl_format_options)
 
